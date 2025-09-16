@@ -1,0 +1,182 @@
+:root {
+  /* Paleta de colores estilo neón */
+  --color-dark-purple: #1a0a2e; /* Fondo principal */
+  --color-light-purple: #4c1d95; /* Morado claro para elementos secundarios */
+  --color-neon-pink: #d946ef; /* Rosa neón vibrante */
+  --color-neon-blue: #3b82f6; /* Azul neón para el otro jugador */
+  --color-white: #e5e5e5; /* Blanco para textos */
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--color-white);
+  background-color: var(--color-dark-purple);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrar verticalmente también */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.board {
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Aumentado para mejor espaciado */
+}
+
+.board h1 {
+  color: var(--color-neon-pink);
+  text-shadow: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink),
+    0 0 20px var(--color-neon-pink);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.board button {
+  padding: 10px 16px; /* Ajustado para mejor apariencia */
+  background: transparent;
+  border: 2px solid var(--color-light-purple);
+  color: var(--color-white);
+  width: 120px; /* Aumentado para mejor proporción */
+  border-radius: 8px; /* Borde más redondeado */
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--color-light-purple);
+}
+
+.board button:hover {
+  background: var(--color-light-purple);
+  box-shadow: 0 0 10px var(--color-light-purple),
+    0 0 20px var(--color-light-purple), 0 0 30px var(--color-light-purple);
+}
+
+.board .game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  /* Ajustado para mejor distribución */
+}
+
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+  background-color: var(--color-light-purple);
+  padding: 8px;
+  box-shadow: 0 0 8px var(--color-light-purple);
+}
+
+.turn .square,
+.winner .square {
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  border: none;
+}
+
+.square.is-selected {
+  color: var(--color-white);
+  background: var(--color-light-purple);
+  border-radius: 8px;
+  box-shadow: 0 0 8px var(--color-light-purple);
+}
+
+.winner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.winner .text {
+  background: rgba(26, 10, 46, 0.9); /* Fondo translúcido */
+  height: 300px;
+  width: 350px; /* Ligeramente más ancho */
+  border: 2px solid var(--color-neon-pink);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 0 10px var(--color-neon-pink);
+}
+
+.winner .text button {
+  background: var(--color-neon-pink);
+  border: none;
+  box-shadow: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink);
+}
+
+.winner .text button:hover {
+  background: var(--color-neon-pink);
+  box-shadow: 0 0 15px var(--color-neon-pink), 0 0 25px var(--color-neon-pink);
+}
+
+.winner .win {
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.square {
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--color-light-purple);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 56px; /* Un poco más grande para mejor visibilidad */
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* Efecto de neón en los símbolos de los jugadores */
+.square.X {
+  color: var(--color-neon-pink);
+  text-shadow: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink);
+}
+
+.square.O {
+  color: var(--color-neon-blue);
+  text-shadow: 0 0 5px var(--color-neon-blue), 0 0 10px var(--color-neon-blue);
+}
+
+.square:hover {
+  background: rgba(76, 29, 149, 0.3); /* Morado semi-transparente */
+  border-color: var(--color-neon-pink);
+  box-shadow: 0 0 10px var(--color-neon-pink);
+}

@@ -1,82 +1,193 @@
 .card {
-    max-width: 33rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 1.5rem;
-    background-color: rgba(0, 0, 0, 1);
-    padding: 1.5rem;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
-  }
+  max-width: 33rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 1.5rem;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+}
 
-  .price {
-    font-size: 3rem;
-    line-height: 1;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 1);
-  }
+.price {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
 
-  .lists {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    grid-row-gap: 0.75rem;
-    row-gap: 0.75rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: rgba(255, 255, 255, 1);
-  }
+.lists {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 0.75rem;
+  row-gap: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgba(255, 255, 255, 1);
+}
 
-  .list {
-    display: flex;
-    align-items: center;
-  }
+.list {
+  display: flex;
+  align-items: center;
+}
 
-  .list svg {
-    height: 1rem;
-    width: 1rem;
-  }
+.list svg {
+  height: 1rem;
+  width: 1rem;
+}
 
-  .list span {
-    margin-left: 1rem;
-  }
+.list span {
+  margin-left: 1rem;
+}
 
-  .action {
-    margin-top: 2rem;
-    width: 100%;
-    border: 2px solid  rgba(255, 255, 255, 1);
-    border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 1);
-    padding: 0.625rem 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    font-size: 0.875rem;
-    color: rgba(0, 0, 0, 1);
-    outline: none;
-    text-decoration: none;
-    transition: all .2s ease;
-  }
+.action {
+  margin-top: 2rem;
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0.625rem 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 1);
+  outline: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
-  .action:hover {
-    color: rgba(255, 255, 255, 1);
-    background-color: transparent;
+.action:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: transparent;
+}
+.cardProyect img,
+.cardProyect > img + h3,
+.cardProyect > img + h3 + a,
+.cardProyect > img + h3 + a + div {
+  transition: all 0.3s ease-in-out;
+}
+.cardProyect:hover > img {
+  opacity: 30%;
+  transform: scale(1.4);
+}
+.cardProyect:hover > img + h3 + a {
+  top: 2rem;
+}
+.cardProyect:hover > img + h3 {
+  top: 4rem;
+}
+.cardProyect:hover > img + h3 + a + div {
+  bottom: 3rem;
+}
+.box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* base para todos los bordes */
+.border {
+  position: absolute;
+  background: #490596; /* verde */
+  border: none;
+  margin: ;
+}
+
+.border.top,
+.border.bottom {
+  height: 3px;
+  width: 100%;
+}
+.border.left,
+.border.right {
+  width: 3px;
+  height: 100%;
+}
+.border.top {
+  top: 0;
+  left: -100%;
+  animation: move-top 4s linear infinite;
+}
+.border.right {
+  right: 0;
+  top: -100%;
+  animation: move-right 4s linear infinite;
+  animation-delay: 1s;
+}
+.border.bottom {
+  bottom: 0;
+  right: -100%;
+  animation: move-bottom 4s linear infinite;
+  animation-delay: 2s;
+}
+.border.left {
+  left: 0;
+  bottom: -100%;
+  animation: move-left 4s linear infinite;
+  animation-delay: 3s;
+}
+
+/* cada borde ocupa 1s del ciclo (4s total) */
+
+/* TOP */
+@keyframes move-top {
+  0% {
+    left: -100%;
+    opacity: 1;
   }
-  .cardProyect img,
-  .cardProyect > img + h3,
-  .cardProyect > img + h3 + a,
-  .cardProyect > img + h3 + a + div {
-      transition: all 0.3s ease-in-out;
+  25% {
+    left: 100%;
+    opacity: 1;
   }
-  .cardProyect:hover >img{
-      opacity:30%;
-      transform: scale(1.4);
-    
+  26%,
+  100% {
+    opacity: 0;
   }
-  .cardProyect:hover > img + h3 + a {
-      top:2rem;
+}
+
+/* RIGHT */
+@keyframes move-right {
+  0% {
+    top: -100%;
+    opacity: 1;
   }
-  .cardProyect:hover > img+  h3{
-      top:4rem;
+  25% {
+    opacity: 1;
   }
-  .cardProyect:hover > img + h3 + a + div {
-      bottom:3rem;
+  26%,
+  100% {
+    top: 100%;
+    opacity: 0;
   }
+}
+
+/* BOTTOM */
+@keyframes move-bottom {
+  0% {
+    right: -100%;
+    opacity: 1;
+  }
+  25% {
+    right: 100%;
+    opacity: 1;
+  }
+  26%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* LEFT */
+@keyframes move-left {
+  0% {
+    bottom: -100%;
+    opacity: 1;
+  }
+  25% {
+    bottom: 100%;
+    opacity: 1;
+  }
+  26%,
+  100% {
+    opacity: 0;
+  }
+}

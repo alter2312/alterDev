@@ -1,17 +1,18 @@
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Session } from "../components/section";
-import Presentacion from "../components/presentacion.jsx";
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
+import { Session } from "../components/layout/section";
+import Presentacion from "../components/layout/presentacion.jsx";
 import { CardPlan } from "../components/ui/card/cardPlan.jsx";
 import { CardProyect } from "../components/ui/card/cardProyect.jsx";
 import { CardText } from "../components/ui/card/CardText.jsx";
 import { CardSkill } from "../components/ui/card/cardSkill.jsx";
-import { Myprofile } from "../components/presentacion.jsx";
+import { Myprofile } from "../components//layout/presentacion.jsx";
 import { Contact } from "../components/ui/form/contact.jsx";
 import { ScrollReveal } from "../animation/ScrollReveal .jsx";
 import plans from "../data/plans.js";
-import projects from "../data/proyects.js";
+import projects from "../data/proyects.jsx";
 import imgYo from "../assets/img/img-yo.png";
+import TicTacToe from "../components/ui/card//cardTictactoe.jsx";
 function Home() {
   const contentTextCard =
     "This portfolio showcases various projects and skills, highlighting creativity and technical expertise. Each section is thoughtfully designed to provide a seamless user experience and demonstrate proficiency in modern web development techniques.";
@@ -29,7 +30,9 @@ function Home() {
         <Session nameSection="about" title="Sobre Mí">
           <section className="flex justify-evenly items-center w-full h-5/6">
             <CardText textCard={contentTextCard} titleCard={titleTextCard} />
-            <Myprofile url={imgYo} />
+            <figure className="w-2/5 h-5/6 flex justify-center items-center rounded-full shadow-lg">
+              <Myprofile url={imgYo} />
+            </figure>
           </section>
         </Session>
       </ScrollReveal>
@@ -71,6 +74,7 @@ function Home() {
                 contentText={project.contentText}
                 urlCodigo={project.urlCodigo}
                 urlProyecto={project.urlProyecto}
+                ModalComponent={project.ModalComponent} // 👈 acá va el modal
               />
             ))}
           </section>
@@ -101,6 +105,9 @@ function Home() {
       <ScrollReveal delay={0.5} direction="up">
         <Footer />
       </ScrollReveal>
+      <Session>
+        <TicTacToe />
+      </Session>
     </>
   );
 }
