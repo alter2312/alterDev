@@ -12,7 +12,6 @@ import { ScrollReveal } from "../animation/ScrollReveal .jsx";
 import plans from "../data/plans.js";
 import projects from "../data/proyects.jsx";
 import imgYo from "../assets/img/img-yo.png";
-import TicTacToe from "../components/ui/card//cardTictactoe.jsx";
 function Home() {
   const contentTextCard =
     "This portfolio showcases various projects and skills, highlighting creativity and technical expertise. Each section is thoughtfully designed to provide a seamless user experience and demonstrate proficiency in modern web development techniques.";
@@ -105,9 +104,7 @@ function Home() {
       <ScrollReveal delay={0.5} direction="up">
         <Footer />
       </ScrollReveal>
-      <Session>
-        <TicTacToe />
-      </Session>
+      <Session></Session>
     </>
   );
 }

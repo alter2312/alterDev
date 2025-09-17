@@ -89,78 +89,19 @@
   position: absolute;
   background: #490596; /* verde */
   border: none;
-  margin: ;
 }
 
-.border.top,
 .border.bottom {
   height: 3px;
   width: 100%;
 }
-.border.left,
-.border.right {
-  width: 3px;
-  height: 100%;
-}
-.border.top {
-  top: 0;
-  left: -100%;
-  animation: move-top 4s linear infinite;
-}
-.border.right {
-  right: 0;
-  top: -100%;
-  animation: move-right 4s linear infinite;
-  animation-delay: 1s;
-}
+
 .border.bottom {
   bottom: 0;
   right: -100%;
-  animation: move-bottom 4s linear infinite;
-  animation-delay: 2s;
-}
-.border.left {
-  left: 0;
-  bottom: -100%;
-  animation: move-left 4s linear infinite;
-  animation-delay: 3s;
+  animation: move-bottom 3s linear infinite;
 }
 
-/* cada borde ocupa 1s del ciclo (4s total) */
-
-/* TOP */
-@keyframes move-top {
-  0% {
-    left: -100%;
-    opacity: 1;
-  }
-  25% {
-    left: 100%;
-    opacity: 1;
-  }
-  26%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* RIGHT */
-@keyframes move-right {
-  0% {
-    top: -100%;
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  26%,
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
-}
-
-/* BOTTOM */
 @keyframes move-bottom {
   0% {
     right: -100%;
@@ -168,22 +109,6 @@
   }
   25% {
     right: 100%;
-    opacity: 1;
-  }
-  26%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* LEFT */
-@keyframes move-left {
-  0% {
-    bottom: -100%;
-    opacity: 1;
-  }
-  25% {
-    bottom: 100%;
     opacity: 1;
   }
   26%,
