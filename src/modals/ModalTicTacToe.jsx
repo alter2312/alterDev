@@ -2,7 +2,7 @@
 import { Square } from "../components/game/tic-tac-toe/Square.jsx";
 import { TURNS } from "../constants/game/tic-tac-toe/constants.js";
 import { WinnerModal } from "../components/game/tic-tac-toe/WinnerModal.jsx";
-import { TicTacToe } from "../components/game/tic-tac-toe/TicTacToe.jsx";
+import { TicTacToe } from "../components/game/tic-tac-toe/ticTacToe.jsx";
 import { ResetButton } from "../components/ui/resetGame.jsx";
 import { useState } from "react";
 import { ScrollReveal } from "../animation/ScrollReveal .jsx";
